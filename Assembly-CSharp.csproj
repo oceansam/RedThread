@@ -36,8 +36,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\IInteractable.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\BookObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\Inventory\InventoryObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\ItemObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\KeyObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\Students\FemaleObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\Students\MaleObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\Students\StudentObject.cs" />
+     <Compile Include="Assets\Scriptable Objects\SO Scripts\WeaponObject.cs" />
+     <Compile Include="Assets\Scripts\BillboardFX.cs" />
+     <Compile Include="Assets\Scripts\DisplayInventory.cs" />
+     <Compile Include="Assets\Scripts\Iinteract.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\StudentScript.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

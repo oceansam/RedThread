@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    
+    public InventoryObject inventory;
     public CharacterController controller;
     public Transform cam;
     public float playerSpeed = 4f;
@@ -21,14 +23,32 @@ public class PlayerController : MonoBehaviour
     anim = GetComponent<Animator>();
     }
 
+
+    
+    
+    private void OnTriggerStay(Collider other) {
+        switch (other.tag){
+            case "Item":
+                PickUp(other);
+                break;
+            case "NPC":
+                TalkTo(other);
+                break;
+        }
+        
+    }
+    
+   
     // Update is called once per frame
     void Update()
     {
         Walk();
         StartCoroutine(Sprint());
-
+        
+   
 
     }
+
 
     void Walk(){
                 triggerInteger = 0f;
@@ -51,7 +71,33 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("speed", triggerInteger);
     }
+    
+    void TalkTo(Collider person){
+        
+        if (Input.GetKeyDown(KeyCode.E)){
+            
+            var stu = person.gameObject.GetComponent<StudentScript>();
+            Debug.Log(stu.name);
+            
+        }
+    }
 
+   void PickUp(Collider temp){
+        
+        
+        
+        if (Input.GetKeyDown(KeyCode.E)){
+            var item = temp.gameObject.GetComponent<Item>();
+        
+            inventory.AddItem(item.item);
+            Destroy(temp.gameObject);
+            
+        }
+
+       
+    }
+
+    
     IEnumerator Sprint(){
         
         if (Input.GetKeyDown("left shift")){
@@ -67,4 +113,8 @@ public class PlayerController : MonoBehaviour
         
         yield return null;
     }
+
+    // private void OnApplicationQuit() {
+    //     inventory.Container.Clear();
+    // }
 }
