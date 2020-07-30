@@ -6,21 +6,30 @@ public class StudentScript : MonoBehaviour
 {
 
     public StudentObject student;
-    private Transform canvas;
+    private Transform promptCanvas;
+    private Transform dialogueCanvas;   
 
- 
 
     private void Start() {
-        canvas = gameObject.transform.Find("Canvas");
-
+        promptCanvas = gameObject.transform.Find("InteractPrompt");
+        
     }
 
     private void OnTriggerEnter(Collider other) {
-        canvas.gameObject.SetActive(true);
+
+        setOff(true);
     }
 
     private void OnTriggerExit(Collider other) {
-        canvas.gameObject.SetActive(false);
+        setOff(false);
+    }
+
+    private void setOff(bool p){
+        promptCanvas.gameObject.SetActive(p);
+    }
+    public void Conversation (){
+        setOff(false);
+
     }
 
     

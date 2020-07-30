@@ -73,11 +73,10 @@ public class PlayerController : MonoBehaviour
     }
     
     void TalkTo(Collider person){
-        
         if (Input.GetKeyDown(KeyCode.E)){
             
             var stu = person.gameObject.GetComponent<StudentScript>();
-            Debug.Log(stu.name);
+            Debug.Log(stu.student.stuName);
             
         }
     }
