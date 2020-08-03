@@ -15,12 +15,12 @@ public class PlayerController : MonoBehaviour
     public float smoothTime = 0.1f;
     float turnSmoothVelocity;
 
-
     void Start()
     {
     
     controller.center = new Vector3(0f, 1.57f, 0f); // off a bit of testing, (capsule being dumb)
     anim = GetComponent<Animator>();
+
     }
 
 
@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         
+        
     }
     
+   
    
     // Update is called once per frame
     void Update()
@@ -76,8 +78,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)){
             
             var stu = person.gameObject.GetComponent<StudentScript>();
-            Debug.Log(stu.student.stuName);
-            
+            stu.conversationPrompt(true);
+            //stu.conversationPrompt(true);
+
         }
     }
 
