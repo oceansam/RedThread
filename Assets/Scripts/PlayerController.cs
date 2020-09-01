@@ -25,13 +25,15 @@ public class PlayerController : MonoBehaviour
 
 
     
-    
+    //triggerstay might be too slow 
+    //or tags are inflicting performance issues
     private void OnTriggerStay(Collider other) {
         switch (other.tag){
-            case "Item":
-                PickUp(other);
-                break;
+            // case "Item":
+            //     PickUp(other);
+            //     break;
             case "NPC":
+                
                 TalkTo(other);
                 break;
         }
@@ -76,28 +78,29 @@ public class PlayerController : MonoBehaviour
     
     void TalkTo(Collider person){
         if (Input.GetKeyDown(KeyCode.E)){
-            
+            Debug.Log("clicked e");
+
             var stu = person.gameObject.GetComponent<StudentScript>();
             stu.conversationPrompt(true);
-            //stu.conversationPrompt(true);
-
         }
     }
 
-   void PickUp(Collider temp){
+
+
+//    void PickUp(Collider temp){
         
         
         
-        if (Input.GetKeyDown(KeyCode.E)){
-            var item = temp.gameObject.GetComponent<Item>();
-        
-            inventory.AddItem(item.item);
-            Destroy(temp.gameObject);
+//         if (Input.GetKeyDown(KeyCode.E)){
+//             var item = temp.gameObject.GetComponent<Item>();
+
+//             inventory.AddItem(item.item);
+//             Destroy(temp.gameObject);
             
-        }
+//         }
 
        
-    }
+//     }
 
     
     IEnumerator Sprint(){

@@ -9,12 +9,13 @@ public class StudentScript : MonoBehaviour
     private Transform promptCanvas;
     private Transform dialogueCanvas;
     public DialogueSender temp;
+    public bool dialogueActive = false;
     //public GameObject tweener;
 
 
 
 
-
+    
     private void Start() {
         promptCanvas = gameObject.transform.Find("InteractPrompt");
 
@@ -39,10 +40,12 @@ public class StudentScript : MonoBehaviour
         {
             temp.OpenConversation();
         }
-        else{
+        else if (!p){
             temp.CloseConversation();
         }
     }
+
+   
 
     private void setOff(bool p){
         promptCanvas.gameObject.SetActive(p);

@@ -9,11 +9,23 @@ public enum studentGender{
 }
 
 
+
 public class StudentObject : ScriptableObject
 {
 
     public GameObject prefab;
     public studentGender gender;
     public string stuName;
+    //public string[] responseArray = new string[3];
 
+    [TextArea(2,5)]
+    public List<string> nodeSpeech = new List<string>();
+
+  
+   
+  
+   
+
+
+   
 }
