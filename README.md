@@ -1,5 +1,4 @@
 # RedThread
-
 ReadThread is a summer project game. 
 
 -- Under Development --
